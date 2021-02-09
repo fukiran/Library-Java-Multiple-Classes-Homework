@@ -1,6 +1,8 @@
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+
 public class BorrowerTest {
 
     Borrower borrower;
@@ -14,8 +16,14 @@ public class BorrowerTest {
         book = new Book("Core Java", "Horstmann", "Computer Book");
     }
 
-//    @Test
-//    public void canBorrowBook(){
-//
-//    }
+    @Test
+    public void checkBooksOnBookshelf(){
+        assertEquals(0, borrower.howManyBooksOnBookshelf());
+    }
+
+    @Test
+    public void canBorrowBook(){
+    borrower.getBookFromLibrary(book);
+    assertEquals(1, borrower.howManyBooksOnBookshelf());
+    }
 }
