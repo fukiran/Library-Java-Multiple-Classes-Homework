@@ -11,27 +11,25 @@ public class LibraryTest {
     @Before
     public void setUp(){
         book = new Book("Core Java", "Horstmann", "Computer Book");
-        library = new Library(2);
+        library = new Library(5);
 
     }
 
-
-
     @Test
     public void hasCollectionOfBooks(){
-        assertEquals(0, this.library.getNumberOfBooks());
+        assertEquals(4, this.library.getNumberOfBooks());
     }
 
 
     @Test
     public void canAddBook(){
         this.library.addBook(book);
-        assertEquals(1, this.library.getNumberOfBooks());
+        assertEquals(5, this.library.getNumberOfBooks());
     }
 
     @Test
     public void hasCapacity() {
-        assertEquals(2, this.library.getCapacity());
+        assertEquals(5, this.library.getCapacity());
     }
 
     @Test
@@ -39,6 +37,6 @@ public class LibraryTest {
         this.library.addBook(book);
         this.library.addBook(book);
         this.library.addBook(book);
-        assertEquals(2,this.library.getNumberOfBooks());
+        assertEquals(5,this.library.getNumberOfBooks());
     }
 }
