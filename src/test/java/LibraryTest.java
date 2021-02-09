@@ -25,14 +25,20 @@ public class LibraryTest {
 
     @Test
     public void canAddBook(){
-        library.addBook(book);
+        this.library.addBook(book);
         assertEquals(1, this.library.getNumberOfBooks());
     }
 
     @Test
     public void hasCapacity() {
-        assertEquals(2, library.getCapacity());
+        assertEquals(2, this.library.getCapacity());
     }
 
-   
+    @Test
+    public void cantAddOverCapacity() {
+        this.library.addBook(book);
+        this.library.addBook(book);
+        this.library.addBook(book);
+        assertEquals(2,this.library.getNumberOfBooks());
+    }
 }
