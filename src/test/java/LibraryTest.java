@@ -11,7 +11,7 @@ public class LibraryTest {
     @Before
     public void setUp(){
         book = new Book("Core Java", "Horstmann", "Computer Book");
-        library = new Library();
+        library = new Library(2);
 
     }
 
@@ -28,4 +28,11 @@ public class LibraryTest {
         library.addBook(book);
         assertEquals(1, this.library.getNumberOfBooks());
     }
+
+    @Test
+    public void hasCapacity() {
+        assertEquals(2, library.getCapacity());
+    }
+
+   
 }
