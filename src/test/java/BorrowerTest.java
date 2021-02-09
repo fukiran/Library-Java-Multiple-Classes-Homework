@@ -12,7 +12,7 @@ public class BorrowerTest {
     @Before
     public void setUp() {
         borrower = new Borrower();
-        library = new Library(2);
+        library = new Library(6);
         book = new Book("Core Java", "Horstmann", "Computer Book");
     }
 
@@ -23,7 +23,7 @@ public class BorrowerTest {
 
     @Test
     public void canBorrowBook(){
-    borrower.getBookFromLibrary(book);
-    assertEquals(1, borrower.howManyBooksOnBookshelf());
+        borrower.getBookFromLibrary(book, library);
+        assertEquals(1, borrower.howManyBooksOnBookshelf());
     }
 }

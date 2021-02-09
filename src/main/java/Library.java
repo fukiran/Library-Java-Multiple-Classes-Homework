@@ -23,15 +23,19 @@ public class Library {
     }
 
     public int getCapacity() {
-        return capacity;
+        return this.capacity;
     }
 
     public int getNumberOfBooks() {
-        return collectionOfBooks.size();
+        return this.collectionOfBooks.size();
     }
 
     public void addBook(Book book) {
         if (this.getNumberOfBooks() < this.getCapacity())
-        collectionOfBooks.add(book);
+        this.collectionOfBooks.add(book);
+    }
+
+    public void removeBook(Book book) {
+        this.collectionOfBooks.remove(book);
     }
 }
